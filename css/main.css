@@ -1,0 +1,17 @@
+body canvas{
+    margin: 100px auto;
+    display: block;
+}
+.inner-box{
+    text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+#count_inner,
+#count_square{
+    display: inline-block;
+    width: 100px;
+    border: 1px solid #ddd;
+    margin: 10px;
+}

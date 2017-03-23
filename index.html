@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PIXI</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="node_modules/pixi.js/dist/pixi.min.js"></script>
+    <script src="app/app.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="inner-box">
+                <button type="button" class="btn btn-danger pull-left" id="speed-minus">-</button>
+                <span>speed-<b id="speed_value">1</b></span>
+                <button type="button" class="btn btn-success pull-right" id="speed-plus">+</button>
+            </div>
+            <div class="inner-box">
+                <button type="button" class="btn btn-danger pull-left" id="count-minus">-</button>
+                <span>count-<b id="count_value">3</b></span>
+                <button type="button" class="btn btn-success pull-right" id="count-plus">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <p class="text-center">
+                element in area - <span id="count_inner">3</span>
+            </p>
+            <p class="text-center">
+                square elements - <span id="count_square">0</span> px
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var config = {
+        'resolution' : {'width': 640, 'height': 480},
+        backgroundColor: 0xEEEEEE
+    }
+
+    window.addEventListener('load', function(){
+        console.debug('ready!');
+        var render = setup(config);
+        render();
+    }, false)
+</script>
+</html>
