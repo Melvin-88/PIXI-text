@@ -24,7 +24,6 @@
     var s = 0;
     var arrFigure = []
 
-	
     function setup(_config){
         config = _config;
         renderer = new PIXI.WebGLRenderer(config.resolution.width, config.resolution.height);
@@ -107,7 +106,6 @@
             }
         }
     }
-	
     function cloud(mouseData){
         cl = new PIXI.Graphics();
         cl.beginFill(Math.floor( 0xFFFFFF * Math.random()));

@@ -8,6 +8,7 @@ body canvas{
     margin: 0 auto;
     margin-top: 50px;
 }
+
 #count_inner,
 #count_square{
     display: inline-block;
