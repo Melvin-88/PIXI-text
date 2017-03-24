@@ -9,11 +9,13 @@
     var spriteEc;
     var spriteR;
     var spritePo;
+    var spriteCl;
     var g;
+    var cl;
     var graphicsS;
     var graphicsR;
     var figures = 3;
-    var max = 6;
+    var max = 7;
     var min = 1;
     var figure;
     var arr = [];
@@ -96,12 +98,38 @@
                 case 5:
                     polygon(mouseData);
                     break;
+                case 6:
+                    cloud(mouseData);
+                    break;
                 default:
                     return false;
             }
         }
     }
+    function cloud(mouseData){
+        cl = new PIXI.Graphics();
+        cl.beginFill(Math.floor( 0xFFFFFF * Math.random()));
+        cl.moveTo(22, 11);
+        cl.arcTo(41, -8, 58, 11, 18);
+        cl.arcTo(86, 20, 65, 48, 18);
+        cl.arcTo(62, 74, 32, 61, 18);
+        cl.arcTo(-4, 69, 4, 40, 18);
+        cl.arcTo(-2, 11, 22, 11, 18);
+        cl.endFill();
 
+        var texture = cl.generateTexture();
+        spriteCl = new PIXI.Sprite(texture);
+        spriteCl.interactive = true;
+        spriteCl.anchor.set(0.5, 0.5);
+        if(!mouseData){
+            spriteCl.position.set(config.resolution.width * Math.random(), -50);
+        }else{
+            spriteCl.position.set(mouseData.x , mouseData.y);
+        }
+        rootStage.addChild(spriteCl);
+        arr.push(spriteCl);
+        arrFigure.push('spriteCl');
+    }
     function polygon(mouseData){
         g = new PIXI.Graphics();
         g.beginFill(Math.floor( 0xFFFFFF * Math.random()));
